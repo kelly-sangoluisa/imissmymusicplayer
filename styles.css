@@ -60,6 +60,59 @@ html, body {
     height: 90%;
     overflow-y: scroll;
 }
+
+
+.parent {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 3px;
+    border: #1b1049 1px solid;
+    margin: 10px;
+    font-size: 13px;
+    background-color: rgb(244, 240, 255);
+}
+    
+.song-picture{
+    grid-row: span 2 / span 2;
+}
+
+.song-picture img{
+    width: 100%;
+    height: 100%;
+    padding: 3px;
+    
+}
+
+.song-title {
+    grid-column: span 3 / span 3;
+    align-self: center;
+    text-align: center;
+    border-bottom: #1b1049 1px solid;
+    padding-bottom: 5px;
+    margin-right: 2px;
+}
+
+.song-artist {
+    grid-column: span 3 / span 3;
+    grid-column-start: 2;
+    grid-row-start: 2;
+    align-self: center;
+    text-align: center;
+
+}
+
+.song-duration {
+    grid-row: span 2 / span 2;
+    grid-column-start: 4;
+    grid-row-start: 1;
+    align-content: center;
+    justify-self: flex-end;
+}
+  
+
+
+
 .playlist-box ul{
     list-style-type: none;
     padding: 0;

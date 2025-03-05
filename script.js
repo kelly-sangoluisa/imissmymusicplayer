@@ -27,11 +27,11 @@ document.getElementById('file-input').addEventListener('change', function(event)
                     var title = tag.tags.title;
                     var artist = tag.tags.artist;
                     var album = tag.tags.album;
+                    var duration = tag.tags.duration;
                     var picture = tag.tags.picture;
 
-                    document.getElementById('file-name').textContent = 'Title: ' + title;
-                    document.getElementById('file-artist').textContent = 'Artist: ' + artist;
-                    document.getElementById('file-duration').textContent = 'Album: ' + album;
+                    document.getElementById('song-title').textContent = title;
+                    document.getElementById('song-artist').textContent = artist;
 
                     // Verificar si la imagen existe antes de mostrarla
                     if (picture) {
@@ -40,12 +40,12 @@ document.getElementById('file-input').addEventListener('change', function(event)
                             base64String += String.fromCharCode(picture.data[i]);
                         }
                         var imageUrl = 'data:' + picture.format + ';base64,' + window.btoa(base64String);
-                        var imgElement = document.getElementById('file-image');
+                        var imgElement = document.getElementById('song-picture');
                         imgElement.src = imageUrl;
                         imgElement.style.display = 'block';
                     } else {
                         // Si no hay imagen, ocultar el contenedor de la imagen
-                        document.getElementById('file-image').style.display = 'none';
+                        document.getElementById('song-picture').style.display = 'none';
                     }
                 },
                 onError: function(error) {

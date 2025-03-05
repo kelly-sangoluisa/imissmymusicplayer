@@ -5,10 +5,11 @@ document.getElementById('play-btn').addEventListener('click', function() {
     if (disc.classList.contains('stopped')) {
         disc.classList.remove('stopped');
         //cambiar play a pause
-        playbtn.textContent = '⏸';
+        playbtn.innerHTML = '<i class="fas fa-pause"></i>';
+
     } else {
         disc.classList.add('stopped');
-        playbtn.textContent = '►';
+        playbtn.innerHTML = '<i class="fas fa-play"></i>';
     }
 });
 

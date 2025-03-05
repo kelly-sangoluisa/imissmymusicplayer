@@ -12,6 +12,7 @@
             animation-play-state: paused;
         }
     </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsmediatags/3.9.5/jsmediatags.min.js"></script>
 </head>
 
 <body>
@@ -19,10 +20,19 @@
     <div class="main">
         <div class="content-box">
             <div class="songs-box">
-                <div class="update-btn">
-                    Update
+                <input type="file" id="file-input" accept=".mp3" style="display: none;">
+                    <label for="file-input" class="update-btn">
+                        <i class="fa-solid fa-upload"></i>
+                        Update 
+                    </label>    
+                </input>
+                <div id="file-info">
+                    <p id="file-name"></p>
+                    <p id="file-artist"></p>
+                    <p id="file-duration"></p>
+                    <img id="file-image" src="" alt="Album Art" style="display: none;">
                 </div>
-                <!--arreglar porque aun falta poner el play talvez poner una tabla creo-->
+                <!--arreglar porque aun falta poner el play talvez poner una tabla creo-->     
                 <div class="playlist-box">
                     <ul>
                         <li>song 1 </li>

@@ -1,5 +1,5 @@
 *{
-    border: red 1px solid;
+    /*border: red 1px solid;*/
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
  }
@@ -37,8 +37,8 @@ html, body {
 }
 
 .update-btn{
-    width: 80%;
-    height: 10%;
+    width: 90%;
+    height: 16%;
     border-radius: 30px;
     background-color: #1b1049;
     color: white;
@@ -46,6 +46,8 @@ html, body {
     padding: 5px;
     margin: 2px;
     justify-self: center;
+    display: inline-block;
+    cursor: pointer;
 }
 
 .update-btn:hover{

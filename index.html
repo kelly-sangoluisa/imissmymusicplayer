@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+    <style>
+        .stopped {
+            animation-play-state: paused;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header"></div>
+    <div class="main">
+        <div class="content-box">
+            <div class="songs-box">
+                <div class="update-btn">
+                    update
+                </div>
+                <!--arreglar porque aun falta poner el play talvez poner una tabla creo-->
+                <div class="playlist-box">
+                    <ul>
+                        <li>song 1 </li>
+                        <li>song 2</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="player-box">
+                <div class="disc-box">
+                    <img class="disc stopped" id="disc" src="img/disco.webp" alt="imagen de disco">
+                </div>
+                <div class="player-controls">
+                    <div class="player-buttons">
+                        <button id="previus-btn"> ⏮ </button>
+                        <button id="play-btn"> ► </button>
+                        <button id="pause-btn"> ⏭ </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <a href="github.com/kelly-sangoluisa/imissmymusicplayer">© 2023 imissmymusicplayer. All rights reserved.</a>
+    </div>
+
+</body>
+<script src="script.js"></script>
+</html>

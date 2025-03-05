@@ -26,26 +26,44 @@ document.getElementById('file-input').addEventListener('change', function(event)
                 onSuccess: function(tag) {
                     var title = tag.tags.title;
                     var artist = tag.tags.artist;
-                    var album = tag.tags.album;
-                    var duration = tag.tags.duration;
                     var picture = tag.tags.picture;
+                    var filename = file.name;
+                
+                   //verficar si existe el titulo y el artista para ponerlo en los dos divs
+                    if (artist == null && title == null) {
+                        // Dividir la frase en la mitad (por caracteres)
+                        let middleIndex = Math.floor(filename.length / 2);
+                        let firstHalf = filename.slice(0, middleIndex);
+                        let secondHalf = filename.slice(middleIndex);
 
-                    document.getElementById('song-title').textContent = title;
-                    document.getElementById('song-artist').textContent = artist;
+                        document.getElementById('song-title').textContent = firstHalf;
+                        document.getElementById('song-artist').textContent = secondHalf;
+                    }else{
+                        document.getElementById('song-title').textContent = title;
+                        document.getElementById('song-artist').textContent = artist;
+                    }
 
-                    // Verificar si la imagen existe antes de mostrarla
+                    // Verificar si la imagen existe antes de mostrarla 
+                    var imgElement = document.getElementById('song-picture');
+                    var picture_box = document.getElementById('disc');
+
                     if (picture) {
                         var base64String = '';
                         for (var i = 0; i < picture.data.length; i++) {
                             base64String += String.fromCharCode(picture.data[i]);
                         }
                         var imageUrl = 'data:' + picture.format + ';base64,' + window.btoa(base64String);
-                        var imgElement = document.getElementById('song-picture');
                         imgElement.src = imageUrl;
                         imgElement.style.display = 'block';
+                        picture_box.src = imageUrl;
+
+
                     } else {
-                        // Si no hay imagen, ocultar el contenedor de la imagen
-                        document.getElementById('song-picture').style.display = 'none';
+                        // Si no hay imagen, colocar una imagen default
+                        var imageUrl= 'img/default.webp';
+                        imgElement.src = imageUrl;
+                        imgElement.style.display = 'block';
+                        picture_box.src = imageUrl;
                     }
                 },
                 onError: function(error) {
